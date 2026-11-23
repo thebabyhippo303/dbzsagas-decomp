@@ -15,6 +15,24 @@ A matching C decompilation repository for **Dragon Ball Z: Sagas** (Nintendo Gam
 
 See [progress/SUMMARY.md](progress/SUMMARY.md) for the per-class breakdown and [progress/functions.tsv](progress/functions.tsv) for the full 9,961-function table.
 
+## Verify
+
+Run the one-command verifier from the repo root:
+
+```bash
+python3 tools/verify.py
+```
+
+This checks all 9,961 function entries across `config/GZEE70/symbols.txt`, `progress/functions.tsv`, `progress/progress.json`, and `src/` (ensuring zero inline-asm stubs), and verifies `orig/GZEE70/sys/main.dol` SHA-1 if present.
+
+To also compile and byte-diff matched C against your `main.dol` with SN ProDG 3.9.3 (under Wine):
+
+```bash
+PRODG_DIR=/path/to/prodg_393 python3 tools/verify.py --func Assert_Fail
+# or verify all matched ProDG functions:
+PRODG_DIR=/path/to/prodg_393 python3 tools/verify.py --compile-all
+```
+
 ## Repository Layout
 
 - `config/GZEE70/symbols.txt` — All 9,961 function symbols (9,281 named, 680 unnamed) and data symbols in `dtk` format.
