@@ -56,4 +56,13 @@ PRODG_DIR=/path/to/prodg_393 python3 tools/verify.py --compile-all
 
 ## License
 
-This decompilation repository is dedicated to the **Public Domain** under **CC0 1.0 Universal** — see [LICENSE](LICENSE). No copyrighted game assets or binaries are included.
+The project's own work in this repository (the decompiled game code, tools, configuration and documentation written for this project) is dedicated to the **Public Domain** under **CC0 1.0 Universal**. See [LICENSE](LICENSE). No copyrighted game assets or binaries are included.
+
+The CC0 dedication does not cover third-party code and interfaces that appear here because the game contains them. They remain the property of their respective owners and are not dedicated to the public domain:
+
+- **Nintendo's GameCube (Dolphin) SDK** and the start-up and compiler runtime linked with it: the folders `src/OS`, `src/DVD`, `src/PAD`, `src/VI`, `src/SI`, `src/EXI`, `src/DB`, `src/VM`, `src/CARDDir`, `src/CARDWrite` and `src/Runtime`, and the SDK functions in `src/global` (the `GX`, `GD`, `OS`, `DVD`, `VI`, `SI`, `EXI`, `PAD`, `AI`, `AR`, `ARQ`, `AX`, `MIX`, `DSP`, `CARD`, `PPC`, `C_MTX`, `VM`, `DB` and `DEMO` function families), matching the Metrowerks-compiled address bands listed in [docs/COMPILER.md](docs/COMPILER.md). (`src/AI` is the game's own enemy AI, not the SDK's audio interface.)
+- **RAD Game Tools' Bink** video codec: `src/Bink`, `src/BinkAX`, `src/BinkFFT`, `src/BinkIODVD`, `src/BinkVideo`, and the `Bink*` and `rad*`/`RAD*` functions in `src/global`.
+- **Metrowerks' debugger support** (the `FileServer` / MetroTRK band in [docs/COMPILER.md](docs/COMPILER.md)): `src/FileServer`.
+- **SN Systems' C library** functions in `src/global` (for example `memcpy`, `strlen`, `sprintf`, `qsort` and the math functions).
+
+These files stay in the repository so the game builds and matches as a whole; this section only states what the dedication covers.
