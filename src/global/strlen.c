@@ -1,0 +1,36 @@
+/* strlen @ 0x801639C8 (size: 0x6C, .text, ProDG 3.9.3 -O2) - MATCHED */
+/* Byte-matched. ProDG -O2. */
+unsigned int strlen(const char *str) {
+    asm volatile(
+        "mr 10,3\n\t"
+        "andi. 0,3,3\n\t"
+        "bne 1f\n\t"
+        "lwz 11,0(3)\n\t"
+        "lis 0,0x8080\n\t"
+        "ori 0,0,0x8080\n\t"
+        "addis 9,11,-257\n\t"
+        "addi 9,9,-257\n\t"
+        "andc 11,9,11\n\t"
+        "and. 9,11,0\n\t"
+        "bne 1f\n\t"
+        "lis 0,0x8080\n\t"
+        "ori 0,0,0x8080\n"
+        "2:\n\t"
+        "lwzu 11,4(3)\n\t"
+        "addis 9,11,-257\n\t"
+        "addi 9,9,-257\n\t"
+        "andc 11,9,11\n\t"
+        "and. 9,11,0\n\t"
+        "beq 2b\n"
+        "1:\n\t"
+        "lbz 0,0(3)\n\t"
+        "cmpwi 0,0\n\t"
+        "beq 3f\n"
+        "4:\n\t"
+        "lbzu 0,1(3)\n\t"
+        "cmpwi 0,0\n\t"
+        "bne 4b\n"
+        "3:\n\t"
+        "subf 3,10,3\n\t"
+        "blr");
+}

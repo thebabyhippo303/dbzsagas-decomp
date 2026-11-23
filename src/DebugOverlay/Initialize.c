@@ -1,0 +1,128 @@
+/* DebugOverlay__Initialize @ 0x8013679C (size: 0x374, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+typedef signed long long s64; typedef unsigned long long u64;
+#define M2C_ERROR(...) 0
+#define M2C_BITWISE(type, expr) ({ typedef char mt_same_width[(sizeof(type) == sizeof(expr)) ? 1 : -1]; union { __typeof__(expr) from; type to; } mt_bits = {(expr)}; mt_bits.to; })
+
+void Sphere__AddChild(void *, void *);
+void DebugOverlay__SetActorListVisible(char *, s32);
+void DebugOverlay__SetStatusFieldsVisible(void *, s32);
+void Sphere__SetPosition(void *, f32, f32);
+void Sphere__SetColor(void *, f32, f32, f32, f32);
+void SphereText__SetText(void *, char *);
+void Sphere__Show(void *);
+void fn_8026C5A0(void *, float, float);
+void fn_8026C6F8(void *, int);
+void fn_802721F4(void *, float);
+M2C_UNK fn_80263C18(s32, s32);
+M2C_UNK fn_80263C28(s32);
+M2C_UNK fn_8026D590(s32);
+void DebugOverlay__SetVisible(char *, s32);
+M2C_UNK DebugOverlay__BuildActorTypeList(s8 *);
+extern s8 lbl_8032AC24 __attribute__((section(".data")));
+extern f32 lbl_8032AC3C __attribute__((section(".data")));
+extern f32 lbl_8032AC40 __attribute__((section(".data")));
+extern f32 lbl_8032AC44 __attribute__((section(".data")));
+extern f32 lbl_8032AC48 __attribute__((section(".data")));
+extern f32 lbl_8032AC4C __attribute__((section(".data")));
+extern f32 lbl_8032AC50 __attribute__((section(".data")));
+extern f32 lbl_8032AC54 __attribute__((section(".data")));
+extern f32 lbl_8032AC58 __attribute__((section(".data")));
+extern f32 lbl_8032AC5C __attribute__((section(".data")));
+extern f32 lbl_8032AC60 __attribute__((section(".data")));
+extern f32 lbl_8032AC64 __attribute__((section(".data")));
+extern f32 lbl_8032AC68 __attribute__((section(".data")));
+extern f32 lbl_8032AC6C __attribute__((section(".data")));
+extern f32 lbl_8032AC78 __attribute__((section(".data")));
+extern f32 lbl_8032AC7C __attribute__((section(".data")));
+extern s32 *lbl_803DC3B4;
+
+void DebugOverlay__Initialize(s8 *arg0) {
+    M2C_UNK (*temp_lr)(void *, M2C_UNK);
+    s16 ld_3E8;
+    s16 ld_A8;
+    f32 temp_f29;
+    f32 temp_f30;
+    s32 temp_r29;
+    s32 var_r19;
+    void *temp_r11;
+    void *temp_r21;
+    void *temp_r9;
+    void *temp_r27;
+    void *temp_r28;
+    void *temp_r30;
+    void *temp_r3;
+    void *temp_r26;
+    void *temp_r9_2;
+    void *temp_r9_3;
+    void *var_r31;
+
+    temp_r29 = arg0 + 0x47B8;
+    temp_r30 = arg0 + 0x41DC;
+    temp_r21 = 0x4E54 + arg0;
+    temp_r28 = arg0 + 0x43D0;
+    temp_r27 = arg0 + 0x45C4;
+    fn_80263C18(temp_r29, *lbl_803DC3B4);
+    fn_80263C28(temp_r29);
+    Sphere__AddChild(arg0, temp_r30);
+    Sphere__AddChild(arg0, temp_r21);
+    Sphere__AddChild(arg0, temp_r28);
+    Sphere__AddChild(arg0, temp_r27);
+    temp_r26 = arg0 + 0x4C60;
+    var_r19 = 0;
+    fn_802721F4(temp_r30, lbl_8032AC3C);
+    var_r31 = arg0 + 0x5048;
+    fn_8026C5A0(temp_r30, lbl_8032AC40, lbl_8032AC44);
+    Sphere__SetPosition(temp_r30, lbl_8032AC48, lbl_8032AC3C);
+    fn_8026D590((s32) temp_r30);
+    Sphere__SetColor(temp_r30, lbl_8032AC40, lbl_8032AC4C, lbl_8032AC40, lbl_8032AC40);
+    fn_8026C6F8(temp_r30, 0xF423F);
+    fn_802721F4(temp_r28, lbl_8032AC3C);
+    fn_8026C5A0(temp_r28, lbl_8032AC40, lbl_8032AC44);
+    Sphere__SetPosition(temp_r28, lbl_8032AC48, lbl_8032AC50);
+    fn_8026D590((s32) temp_r28);
+    Sphere__SetColor(temp_r28, lbl_8032AC40, lbl_8032AC4C, lbl_8032AC4C, lbl_8032AC40);
+    fn_8026C6F8(temp_r28, 0xF423F);
+    fn_802721F4(temp_r27, lbl_8032AC3C);
+    fn_8026C5A0(temp_r27, lbl_8032AC40, lbl_8032AC44);
+    Sphere__SetPosition(temp_r27, lbl_8032AC48, lbl_8032AC54);
+    fn_8026D590((s32) temp_r27);
+    Sphere__SetColor(temp_r27, lbl_8032AC4C, lbl_8032AC4C, lbl_8032AC40, lbl_8032AC40);
+    fn_8026C6F8(temp_r27, 0xF423F);
+    fn_802721F4(temp_r21, lbl_8032AC3C);
+    Sphere__SetPosition(temp_r21, lbl_8032AC58, lbl_8032AC5C);
+    fn_8026C6F8(temp_r21, 0xF423F);
+    Sphere__AddChild(arg0, temp_r26);
+    SphereText__SetText(temp_r26, &lbl_8032AC24);
+    fn_802721F4(temp_r26, lbl_8032AC60);
+    Sphere__SetPosition(temp_r26, lbl_8032AC64, lbl_8032AC68);
+    Sphere__Show(temp_r26);
+    fn_8026C6F8(temp_r26, 0xF423F);
+    temp_f29 = lbl_8032AC3C;
+    temp_f30 = lbl_8032AC78;
+    do {
+        Sphere__AddChild(arg0, var_r31);
+        temp_r9 = M2C_FIELD(var_r31, void **, 0x19C);
+        ld_3E8 = M2C_FIELD(temp_r9, s16 *, 0x3E8);
+        M2C_FIELD(temp_r9, M2C_UNK (**)(void *, f32), 0x3EC)(var_r31 + ld_3E8, lbl_8032AC6C);
+        temp_r11 = M2C_FIELD(var_r31, void **, 0x19C);
+        ld_A8 = M2C_FIELD(temp_r11, s16 *, 0xA8);
+        M2C_FIELD(temp_r11, M2C_UNK (**)(void *, f32, f32), 0xAC)(var_r31 + ld_A8, lbl_8032AC7C, ((f32) (f64) var_r19++ * temp_f29) + temp_f30);
+        temp_r9_2 = M2C_FIELD(var_r31, void **, 0x19C);
+        M2C_FIELD(temp_r9_2, M2C_UNK (**)(void *, f32), 0x45C)(var_r31 + M2C_FIELD(temp_r9_2, s16 *, 0x458), lbl_8032AC6C);
+        temp_r9_3 = M2C_FIELD(var_r31, void **, 0x19C);
+        temp_r3 = var_r31 + M2C_FIELD(temp_r9_3, s16 *, 0x1B0);
+        temp_lr = M2C_FIELD(temp_r9_3, M2C_UNK (**)(void *, M2C_UNK), 0x1B4);
+        var_r31 += 0x1F4;
+        temp_lr(temp_r3, 0xF423F);
+    } while (!(var_r19 > 5));
+    M2C_FIELD(arg0, s32 *, 0x6BA0) = 0;
+    DebugOverlay__SetActorListVisible(arg0, 0);
+    DebugOverlay__SetStatusFieldsVisible(arg0, 0);
+    DebugOverlay__SetVisible((char *) arg0, 0);
+    M2C_FIELD(arg0, s32 *, 0x81FC) = 1;
+    DebugOverlay__BuildActorTypeList(arg0);
+}

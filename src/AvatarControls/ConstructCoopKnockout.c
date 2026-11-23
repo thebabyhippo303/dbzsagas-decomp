@@ -1,0 +1,16 @@
+/* AvatarControls__ConstructCoopKnockout @ 0x800B9204 (size: 0x4C, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+
+void * AvatarControls__ClearCallbackState(void *);
+extern M2C_UNK lbl_80333E10 __attribute__((section(".data")));
+
+void *AvatarControls__ConstructCoopKnockout(void *arg0, s32 arg1, s32 arg2) {
+    M2C_FIELD(arg0, s32 *, 0) = arg1;
+    M2C_FIELD(arg0, M2C_UNK **, 4) = &lbl_80333E10;
+    AvatarControls__ClearCallbackState(arg0 + 8);
+    M2C_FIELD(arg0, s32 *, 0x7C) = arg2;
+    return arg0;
+}

@@ -1,0 +1,39 @@
+diff --git a/src/analysis/slices.rs b/src/analysis/slices.rs
+index 0e5ed29..2dbccf0 100644
+--- a/src/analysis/slices.rs
++++ b/src/analysis/slices.rs
+@@ -333,6 +333,11 @@ impl FunctionSlices {
+                 if ins.code == 0 {
+                     log::debug!("Hit zeroed padding @ {:#010X}", ins_addr);
+                     Ok(ExecCbResult::End(false))
++                } else if ins.code == 1 {
++                    // SN ProDG inline assert trap word (0x00000001): terminates the block.
++                    log::debug!("SN trap word @ {:#010X}", ins_addr);
++                    self.blocks.insert(block_start, Some(ins_addr + 4));
++                    Ok(ExecCbResult::EndBlock)
+                 } else {
+                     log::debug!("Illegal instruction @ {:#010X}", ins_addr);
+                     Ok(ExecCbResult::Continue)
+diff --git a/src/analysis/tracker.rs b/src/analysis/tracker.rs
+index 59e631c..b9be79e 100644
+--- a/src/analysis/tracker.rs
++++ b/src/analysis/tracker.rs
+@@ -408,6 +408,7 @@ impl Tracker {
+                 }
+                 Ok(ExecCbResult::Continue)
+             }
++            StepResult::Illegal if ins.code == 1 => Ok(ExecCbResult::EndBlock),
+             StepResult::Illegal => {
+                 log::debug!(
+                     "Illegal instruction hit @ {:#010X} (function {:#010X}-{:#010X})",
+@@ -717,6 +718,10 @@ impl Tracker {
+                 // Skip external relocations, they already exist
+                 continue;
+             };
++            if (target.section as usize) >= obj.sections.len() as usize {
++                log::warn!("Skipping relocation {} with invalid target section {}", addr, target.section);
++                continue;
++            }
+             if obj.blocked_relocation_sources.contains(addr)
+                 || obj.blocked_relocation_targets.contains(target)
+             {

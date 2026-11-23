@@ -1,0 +1,22 @@
+/* Sfx3DPlayer__SetVoiceStaticPosition @ 0x801987B8 (size: 0x48, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+typedef signed long long s64; typedef unsigned long long u64;
+#define M2C_ERROR(...) 0
+#define M2C_BITWISE(type, expr) ({ typedef char mt_same_width[(sizeof(type) == sizeof(expr)) ? 1 : -1]; union { __typeof__(expr) from; type to; } mt_bits = {(expr)}; mt_bits.to; })
+
+s32 Sfx3DPlayer__GetVoice(s32, void *);
+void Voice3D__SetStaticPosition(void *, void *);
+
+s32 Sfx3DPlayer__SetVoiceStaticPosition(s32 arg0, void *arg1, void *arg2) {
+    void *voice;
+
+    voice = (void *)Sfx3DPlayer__GetVoice(arg0, arg1);
+    if (voice != NULL) {
+        Voice3D__SetStaticPosition(voice, arg2);
+        return 1;
+    }
+    return 0;
+}

@@ -1,0 +1,58 @@
+Sections:
+	.init       type:code align:4
+	.text       type:code align:4
+	.rodata0    type:rodata align:4
+	.rodata     type:rodata align:4
+	.data       type:data align:4
+	.bss        type:bss align:4
+	.sdata      type:data align:32
+	.sbss       type:bss align:4
+	.sdata2     type:rodata align:32
+
+runtime/mem.c:
+	.text       start:0x80163554 end:0x80163778
+
+dolphin/base/PPCArch.c:
+	.text       start:0x80169938 end:0x80169A4C
+
+dolphin/os.c:
+	.text       start:0x80169B9C end:0x80170224
+
+dolphin/db.c:
+	.text       start:0x8017099C end:0x80170A08
+
+dolphin/dvd.c:
+	.text       start:0x80170A08 end:0x801751EC
+
+dolphin/vi.c:
+	.text       start:0x801757C0 end:0x8017707C
+
+dolphin/si.c:
+	.text       start:0x80177650 end:0x80178ACC
+
+dolphin/exi.c:
+	.text       start:0x80178AF0 end:0x8017A814
+
+dolphin/pad.c:
+	.text       start:0x8017B53C end:0x8017C3FC
+
+dolphin/ai.c:
+	.text       start:0x8017C820 end:0x8017C98C
+
+dolphin/ar.c:
+	.text       start:0x802D078C end:0x802D0850
+
+dolphin/arq.c:
+	.text       start:0x802D22CC end:0x802D233C
+
+dolphin/ax.c:
+	.text       start:0x802D24BC end:0x802D2508
+
+dolphin/dsp.c:
+	.text       start:0x802D7F48 end:0x802D800C
+
+dolphin/card.c:
+	.text       start:0x802D9894 end:0x802D9940
+
+dolphin/gx.c:
+	.text       start:0x802DF5D8 end:0x802E4F70

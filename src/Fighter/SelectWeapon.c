@@ -1,0 +1,12 @@
+/* Fighter__SelectWeapon @ 0x8002B288 (size: 0x38, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+
+void Fighter__SelectWeaponImpl(void *, int);
+void * Script__PopInt(void *, void *);
+void Fighter__SelectWeapon(void *arg0, void *arg1) {
+    int weapon = Script__PopInt(arg0, arg1);
+    Fighter__SelectWeaponImpl(M2C_FIELD(arg0, void **, 0xC8), weapon);
+}

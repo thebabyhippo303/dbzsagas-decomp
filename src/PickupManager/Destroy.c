@@ -1,0 +1,15 @@
+/* PickupManager__Destroy @ 0x800E4E1C (size: 0x40, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+
+void fn_801843CC(void *);
+void fn_800E4F40(void *self);
+
+void PickupManager__Destroy(void *arg0, s32 arg1) {
+    fn_800E4F40(arg0);
+    if (arg1 & 1) {
+        fn_801843CC(arg0);
+    }
+}

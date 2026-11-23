@@ -1,0 +1,39 @@
+/* FileHandle__AllocSlot @ 0x80180470 (size: 0x60, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+typedef signed long long s64; typedef unsigned long long u64;
+#define M2C_ERROR(...) 0
+#define M2C_BITWISE(type, expr) ({ typedef char mt_same_width[(sizeof(type) == sizeof(expr)) ? 1 : -1]; union { __typeof__(expr) from; type to; } mt_bits = {(expr)}; mt_bits.to; })
+
+
+extern s32 lbl_803DCB78;
+extern s32 lbl_803DCB7C;
+extern s32 lbl_803DCB90;
+
+u32 FileHandle__AllocSlot(void) {
+    s32 i;
+    s32 used;
+    s32 tbl;
+    s32 cur;
+    s32 off;
+
+    i = 0;
+    if (i < lbl_803DCB78) {
+        tbl = lbl_803DCB7C;
+        off = 0;
+        cur = tbl;
+        do {
+            used = *(s32 *) (off + tbl) != 0;
+            if (used == 0) {
+                return cur;
+            }
+            i += 1;
+            cur += 8;
+            off += 8;
+        } while (i < lbl_803DCB78);
+    }
+    lbl_803DCB90 = 4;
+    return 0;
+}

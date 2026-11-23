@@ -1,0 +1,10 @@
+orig/
+build/
+*.o
+*.dol
+*.iso
+*.gcm
+*.gcz
+*.rvz
+.DS_Store
+__pycache__/

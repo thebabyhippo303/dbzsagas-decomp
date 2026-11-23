@@ -1,0 +1,14 @@
+# Dragon Ball Z: Sagas (GameCube, USA - GZEE70)
+# No game assets or DOL binaries are included in this repository.
+# Extract main.dol from your own legally owned disc to orig/GZEE70/sys/main.dol.
+
+object: orig/GZEE70/sys/main.dol
+hash: a05529b36f903f0efecfc7528ccb4801b15bc15b  # Redump-verified GZEE70 main.dol SHA-1
+symbols: config/GZEE70/symbols.txt
+splits: config/GZEE70/splits.txt
+
+# Primary game compiler: SN Systems ProDG 3.9.3 (ngccc.exe -O2)
+# Dolphin SDK sections were linked from Metrowerks CodeWarrior (MWCC GC/1.x & GC/2.0).
+# See docs/COMPILER.md for exact address bands and decomp.me setup.
+detect_objects: true
+detect_strings: true

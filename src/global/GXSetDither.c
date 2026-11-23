@@ -1,0 +1,10 @@
+/*
+ * GXSetDither
+ * Address:  0x802E5A30
+ * Size:     0x2C (44 bytes)
+ * Section:  .text
+ * Compiler: MWCC GC/1.x (Dolphin SDK)
+ * Status:   UNMATCHED (fill in the blank)
+ */
+
+/* TODO: decompile GXSetDither @ 0x802E5A30 */

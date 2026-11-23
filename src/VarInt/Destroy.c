@@ -1,0 +1,10 @@
+/* VarInt__Destroy @ 0x8018EF00 (size: 0x34, .text, ProDG 3.9.3 -O2) - MATCHED */
+/* Byte-matched: VarInt__Destroy @ 0x8018EF00 (0x34). ProDG -O2. */
+extern char lbl_8033F230[];
+extern void fn_801843CC(void *self);
+
+void VarInt__Destroy(void *self, int flags) {
+    *(void **)((char *)self + 4) = lbl_8033F230;
+    if (flags & 1)
+        fn_801843CC(self);
+}

@@ -1,0 +1,10 @@
+/*
+ * fn_8007CF70
+ * Address:  0x8007CF70
+ * Size:     0x1C4 (452 bytes)
+ * Section:  .text
+ * Compiler: ProDG 3.9.3 -O2
+ * Status:   UNMATCHED (fill in the blank)
+ */
+
+/* TODO: decompile fn_8007CF70 @ 0x8007CF70 */

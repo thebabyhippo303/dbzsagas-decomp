@@ -1,0 +1,10 @@
+/*
+ * __GXShutdown
+ * Address:  0x802DF448
+ * Size:     0x190 (400 bytes)
+ * Section:  .text
+ * Compiler: MWCC GC/1.x (Dolphin SDK)
+ * Status:   UNMATCHED (fill in the blank)
+ */
+
+/* TODO: decompile __GXShutdown @ 0x802DF448 */

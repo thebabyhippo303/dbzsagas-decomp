@@ -1,0 +1,14 @@
+{
+  "game_id": "GZEE70",
+  "title": "Dragon Ball Z: Sagas (GameCube, USA)",
+  "dol_sha1": "a05529b36f903f0efecfc7528ccb4801b15bc15b",
+  "total_functions": 9961,
+  "named_functions": 9281,
+  "unnamed_functions": 680,
+  "matched_functions": 6636,
+  "unmatched_functions": 3325,
+  "matched_percent_functions": 66.62,
+  "total_code_bytes": 3161132,
+  "matched_code_bytes": 991716,
+  "matched_percent_bytes": 31.37
+}

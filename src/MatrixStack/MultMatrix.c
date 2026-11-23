@@ -1,0 +1,125 @@
+/* MatrixStack__MultMatrix @ 0x80248EC0 (size: 0x36C, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+typedef signed long long s64; typedef unsigned long long u64;
+#define M2C_ERROR(...) 0
+#define M2C_BITWISE(type, expr) ({ typedef char mt_same_width[(sizeof(type) == sizeof(expr)) ? 1 : -1]; union { __typeof__(expr) from; type to; } mt_bits = {(expr)}; mt_bits.to; })
+
+typedef struct Mat4 {
+    f32 m[16];
+} Mat4;
+
+void *Matrix__Copy4x4Floats(void *, void *);
+void MatrixStack__Upload(void);
+extern s32 lbl_803B1D5C[];
+extern s32 lbl_803DCDE8;
+
+void MatrixStack__MultMatrix(f32 *arg0) {
+    Mat4 a;
+    Mat4 b;
+    Mat4 c;
+    s32 *base;
+    s32 *f4;
+    f32 *top;
+    s32 *src;
+    s32 idx;
+    s32 *dst;
+    f32 *ap;
+    s32 count;
+    s32 w;
+    f32 t0;
+    f32 t1;
+    f32 t2;
+    f32 t3;
+    f32 t4;
+    f32 t5;
+    f32 t6;
+    f32 t7;
+    f32 t8;
+    f32 t9;
+    f32 t10;
+    f32 t11;
+    f32 t12;
+    f32 t13;
+    f32 t14;
+    f32 t15;
+    f32 a0;
+    f32 a1;
+    f32 a2;
+    f32 a3;
+    base = lbl_803B1D5C;
+    idx = lbl_803DCDE8 * 24;
+    f4 = (s32 *)((char *)base + 4);
+    top = *(f32 **)((char *)f4 + idx);
+    t0 = top[0];
+    t1 = top[1];
+    t2 = top[2];
+    t3 = top[3];
+    t4 = top[4];
+    t5 = top[5];
+    t6 = top[6];
+    t7 = top[7];
+    t8 = top[8];
+    t9 = top[9];
+    t10 = top[10];
+    t11 = top[11];
+    t12 = top[12];
+    t13 = top[13];
+    t14 = top[14];
+    t15 = top[15];
+    a1 = arg0[1];
+    a0 = arg0[0];
+    a2 = arg0[2];
+    a3 = arg0[3];
+    c.m[0] = a0 * t0 + a1 * t4 + a2 * t8 + a3 * t12;
+    c.m[1] = a0 * t1 + a1 * t5 + a2 * t9 + a3 * t13;
+    c.m[2] = a0 * t2 + a1 * t6 + a2 * t10 + a3 * t14;
+    c.m[3] = a0 * t3 + a1 * t7 + a2 * t11 + a3 * t15;
+    a1 = arg0[5];
+    a0 = arg0[4];
+    a2 = arg0[6];
+    a3 = arg0[7];
+    c.m[4] = a0 * t0 + a1 * t4 + a2 * t8 + a3 * t12;
+    c.m[5] = a0 * t1 + a1 * t5 + a2 * t9 + a3 * t13;
+    c.m[6] = a0 * t2 + a1 * t6 + a2 * t10 + a3 * t14;
+    c.m[7] = a0 * t3 + a1 * t7 + a2 * t11 + a3 * t15;
+    a1 = arg0[9];
+    a0 = arg0[8];
+    a2 = arg0[10];
+    a3 = arg0[11];
+    c.m[8] = a0 * t0 + a1 * t4 + a2 * t8 + a3 * t12;
+    c.m[9] = a0 * t1 + a1 * t5 + a2 * t9 + a3 * t13;
+    c.m[10] = a0 * t2 + a1 * t6 + a2 * t10 + a3 * t14;
+    c.m[11] = a0 * t3 + a1 * t7 + a2 * t11 + a3 * t15;
+    a1 = arg0[13];
+    a0 = arg0[12];
+    a2 = arg0[14];
+    a3 = arg0[15];
+    c.m[12] = a0 * t0 + a1 * t4 + a2 * t8 + a3 * t12;
+    c.m[13] = a0 * t1 + a1 * t5 + a2 * t9 + a3 * t13;
+    c.m[14] = a0 * t2 + a1 * t6 + a2 * t10 + a3 * t14;
+    c.m[15] = a0 * t3 + a1 * t7 + a2 * t11 + a3 * t15;
+    Matrix__Copy4x4Floats(&b, &c);
+    a = b;
+    ap = a.m;
+    top = *(f32 **)((char *)f4 + idx);
+    top[0] = a.m[0];
+    top[1] = ap[1];
+    top[2] = ap[2];
+    top[3] = ap[3];
+    top[4] = ap[4];
+    top[5] = ap[5];
+    top[6] = ap[6];
+    top[7] = ap[7];
+    top[8] = ap[8];
+    top[9] = ap[9];
+    top[10] = ap[10];
+    top[11] = ap[11];
+    top[12] = ap[12];
+    top[13] = ap[13];
+    top[14] = ap[14];
+    top[15] = ap[15];
+    MatrixStack__Upload();
+}

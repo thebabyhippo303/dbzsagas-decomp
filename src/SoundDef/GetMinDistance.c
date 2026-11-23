@@ -1,0 +1,32 @@
+/* SoundDef__GetMinDistance @ 0x80192964 (size: 0x70, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+typedef signed long long s64; typedef unsigned long long u64;
+#define M2C_ERROR(...) 0
+#define M2C_BITWISE(type, expr) ({ typedef char mt_same_width[(sizeof(type) == sizeof(expr)) ? 1 : -1]; union { __typeof__(expr) from; type to; } mt_bits = {(expr)}; mt_bits.to; })
+
+
+extern f32 lbl_8033F418 __attribute__((section(".data")));
+extern f32 lbl_8033F41C __attribute__((section(".data")));
+extern f32 lbl_8033F420 __attribute__((section(".data")));
+
+/* Keep the int-to-float constant pool at the same low 16 bits as the DOL. */
+static const char pool_pad[0xF410] = {1};
+
+f32 SoundDef__GetMinDistance(void *arg0) {
+    f32 scale = lbl_8033F418;
+    f32 v = (f32) (f64) (s8) M2C_FIELD(arg0, u8 *, 0xC) * scale;
+    f32 lo = lbl_8033F41C;
+    f32 hi = lbl_8033F420;
+    f32 r;
+    if (v < lo) {
+        r = lo;
+    } else if (!(v <= hi)) {
+        r = hi;
+    } else {
+        r = v;
+    }
+    return r;
+}

@@ -1,0 +1,35 @@
+/* VariableContext__SetScriptPath @ 0x8018E14C (size: 0x90, .text, ProDG 3.9.3 -O2) - MATCHED */
+typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
+typedef int s32; typedef unsigned int u32; typedef float f32; typedef double f64; typedef int M2C_UNK;
+#define M2C_FIELD(expr, type, offset) (*(type)((char *)(expr) + (offset)))
+#define NULL 0
+typedef signed long long s64; typedef unsigned long long u64;
+#define M2C_ERROR(...) 0
+#define M2C_BITWISE(type, expr) ({ typedef char mt_same_width[(sizeof(type) == sizeof(expr)) ? 1 : -1]; union { __typeof__(expr) from; type to; } mt_bits = {(expr)}; mt_bits.to; })
+
+void Mem__DeleteArray(void *);
+char * strcpy(char *, const char *);
+int strlen(const char *);
+char * Mem__NewArray(s32);
+u32 VariableContext__SetScriptPath(void *arg0, s8 *arg1) {
+    char *old;
+    char *buf;
+    u32 ret;
+
+    old = M2C_FIELD(arg0, char **, 0x24);
+    if (old != NULL) {
+        Mem__DeleteArray(old);
+    }
+    if (arg1 == NULL || *arg1 == 0) {
+        M2C_FIELD(arg0, char **, 0x24) = NULL;
+    } else {
+        buf = Mem__NewArray(strlen(arg1) + 1);
+        M2C_FIELD(arg0, char **, 0x24) = buf;
+        ret = 0;
+        if (buf == NULL) {
+            return ret;
+        }
+        strcpy(buf, arg1);
+    }
+    return 1;
+}
