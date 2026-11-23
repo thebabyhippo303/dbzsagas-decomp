@@ -52,7 +52,7 @@ PRODG_DIR=/path/to/prodg_393 python3 tools/verify.py --compile-all
 2. Disassemble the function from your `orig/GZEE70/sys/main.dol` using `dtk` (with `tools/dtk-patches/0001-sn-prodg-trap-words-and-invalid-reloc-guard.patch`).
 3. Create a scratch on [decomp.me](https://decomp.me/) using **SN ProDG 3.9.3** (`prodg_393`) with `-O2` (or MWCC GC/1.x for Dolphin SDK bands — see `docs/COMPILER.md`).
 4. Replace the `TODO` stub in `src/<Class>/<Method>.c` with pure matching C (no inline assembly / `__attribute__((naked))`).
-5. Optional: you can use the standalone [NIM-DTK](https://github.com/thebabyhippo303/nim-dtk) matching-C permuter and verifier with this repository (see `examples/dbzsagas-decomp/nim-dtk.toml` in that repo). NIM-DTK is an external tool whose output exception guarantees that C code matched with it is not subject to NIM-DTK's GPL-3.0 license.
+5. Optional: you can use the standalone [Kintoun](https://github.com/thebabyhippo303/kintoun) matching-C permuter and verifier with this repository (see `examples/dbzsagas-decomp/kintoun.toml` in that repo). Kintoun is an external tool whose output exception guarantees that C code matched with it is not subject to Kintoun's GPL-3.0 license.
 
 ## License
 
